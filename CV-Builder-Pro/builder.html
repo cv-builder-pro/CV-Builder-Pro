@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,32 +7,53 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>CV Builder Pro - Resume Builder</title>
+    <title>CV Builder Pro | Resume Builder</title>
 
-    <link rel="stylesheet" href="style.css">
+    <meta name="description"
+        content="Build your professional ATS-friendly resume with live preview.">
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- Font Awesome -->
+
     <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- ================= HEADER START ================= -->
 
 <header class="builder-header">
 
     <div class="container">
 
-        <div class="logo">
+        <a href="index.html" class="logo">
+
             <i class="fa-solid fa-file-lines"></i>
+
             <span>CV Builder Pro</span>
-        </div>
+
+        </a>
 
         <a href="index.html" class="back-home">
-            <i class="fa-solid fa-house"></i>
-            Home
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back To Home
+
         </a>
 
     </div>
@@ -46,40 +66,16 @@
 
     <div class="builder-container">
 
-        <!-- Left Side -->
+        <!-- ================= LEFT SIDE ================= -->
 
         <div class="builder-form">
 
             <h2>Build Your Resume</h2>
 
-            <p>Fill in your details below.</p>
-
-        </div>
-
-        <!-- Right Side -->
-
-        <div class="resume-preview">
-
-            <h2>Live Preview</h2>
-
-            <div class="resume-paper">
-
-                Resume Preview
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<script src="script.js"></script>
-
-</body>
-</html>
-
-<!-- ================= PERSONAL INFORMATION ================= -->
+            <p>
+                Fill in your details and see your resume update live.
+            </p>
+            <!-- ================= PERSONAL INFORMATION ================= -->
 
 <div class="form-section">
 
@@ -87,58 +83,82 @@
 
     <div class="input-group">
 
-        <label>Full Name</label>
-        <input type="text" id="fullName" placeholder="Enter your full name">
+        <label for="fullName">Full Name</label>
+
+        <input
+            type="text"
+            id="fullName"
+            placeholder="Muhammad Ali">
 
     </div>
 
     <div class="input-group">
 
-        <label>Professional Title</label>
-        <input type="text" id="jobTitle" placeholder="Software Engineer">
+        <label for="jobTitle">Professional Title</label>
+
+        <input
+            type="text"
+            id="jobTitle"
+            placeholder="Software Engineer">
 
     </div>
 
     <div class="input-group">
 
-        <label>Email Address</label>
-        <input type="email" id="email" placeholder="example@email.com">
+        <label for="email">Email Address</label>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="example@email.com">
 
     </div>
 
     <div class="input-group">
 
-        <label>Phone Number</label>
-        <input type="tel" id="phone" placeholder="+92 300 1234567">
+        <label for="phone">Phone Number</label>
+
+        <input
+            type="tel"
+            id="phone"
+            placeholder="+92 300 1234567">
 
     </div>
 
     <div class="input-group">
 
-        <label>Address</label>
-        <input type="text" id="address" placeholder="City, Country">
+        <label for="address">Address</label>
+
+        <input
+            type="text"
+            id="address"
+            placeholder="Lahore, Pakistan">
 
     </div>
 
     <div class="input-group">
 
-        <label>Website / LinkedIn</label>
-        <input type="text" id="website" placeholder="https://linkedin.com/in/yourname">
+        <label for="website">Website / LinkedIn</label>
+
+        <input
+            type="url"
+            id="website"
+            placeholder="https://linkedin.com/in/yourname">
 
     </div>
 
     <div class="input-group">
 
-        <label>Professional Summary</label>
+        <label for="summary">Professional Summary</label>
 
-        <textarea id="summary"
-        rows="5"
-        placeholder="Write a short professional summary..."></textarea>
+        <textarea
+            id="summary"
+            rows="5"
+            placeholder="Write a short professional summary..."></textarea>
 
     </div>
 
 </div>
-
 <!-- ================= EDUCATION SECTION ================= -->
 
 <div class="form-section">
@@ -147,52 +167,77 @@
 
     <div class="input-group">
 
-        <label>Degree</label>
-        <input type="text" id="degree" placeholder="Bachelor of Computer Science">
+        <label for="degree">Degree</label>
+
+        <input
+            type="text"
+            id="degree"
+            placeholder="Bachelor of Computer Science">
 
     </div>
 
     <div class="input-group">
 
-        <label>Institute / University</label>
-        <input type="text" id="institute" placeholder="University Name">
+        <label for="institute">Institute / University</label>
+
+        <input
+            type="text"
+            id="institute"
+            placeholder="University Name">
 
     </div>
 
     <div class="input-group">
 
-        <label>Start Year</label>
-        <input type="text" id="eduStart" placeholder="2022">
+        <label for="eduStart">Start Year</label>
+
+        <input
+            type="number"
+            id="eduStart"
+            placeholder="2022"
+            min="1950"
+            max="2099">
 
     </div>
 
     <div class="input-group">
 
-        <label>End Year</label>
-        <input type="text" id="eduEnd" placeholder="2026">
+        <label for="eduEnd">End Year</label>
+
+        <input
+            type="number"
+            id="eduEnd"
+            placeholder="2026"
+            min="1950"
+            max="2099">
 
     </div>
 
     <div class="input-group">
 
-        <label>Grade / CGPA</label>
-        <input type="text" id="grade" placeholder="3.80 CGPA">
+        <label for="grade">Grade / CGPA</label>
+
+        <input
+            type="text"
+            id="grade"
+            placeholder="3.80 CGPA">
 
     </div>
 
     <div class="input-group">
 
-        <label>Description</label>
+        <label for="educationDescription">Education Description</label>
 
         <textarea
             id="educationDescription"
             rows="4"
-            placeholder="Write about your education achievements..."></textarea>
+            placeholder="Describe your achievements, projects or academic performance..."></textarea>
 
     </div>
 
 </div>
-<!-- ================= WORK EXPERIENCE ================= -->
+
+<!-- ================= EXPERIENCE SECTION ================= -->
 
 <div class="form-section">
 
@@ -200,42 +245,60 @@
 
     <div class="input-group">
 
-        <label>Job Title</label>
-        <input type="text" id="experienceJobTitle" placeholder="Frontend Developer">
+        <label for="experienceJobTitle">Job Title</label>
+
+        <input
+            type="text"
+            id="experienceJobTitle"
+            placeholder="Frontend Developer">
 
     </div>
 
     <div class="input-group">
 
-        <label>Company Name</label>
-        <input type="text" id="companyName" placeholder="ABC Company">
+        <label for="companyName">Company Name</label>
+
+        <input
+            type="text"
+            id="companyName"
+            placeholder="ABC Technologies">
 
     </div>
 
     <div class="input-group">
 
-        <label>Location</label>
-        <input type="text" id="companyLocation" placeholder="Lahore, Pakistan">
+        <label for="companyLocation">Location</label>
+
+        <input
+            type="text"
+            id="companyLocation"
+            placeholder="Lahore, Pakistan">
 
     </div>
 
     <div class="input-group">
 
-        <label>Start Date</label>
-        <input type="month" id="experienceStart">
+        <label for="experienceStart">Start Date</label>
+
+        <input
+            type="month"
+            id="experienceStart">
 
     </div>
 
     <div class="input-group">
 
-        <label>End Date</label>
-        <input type="month" id="experienceEnd">
+        <label for="experienceEnd">End Date</label>
+
+        <input
+            type="month"
+            id="experienceEnd">
 
     </div>
 
     <div class="input-group">
 
-        <label>Job Description</label>
+        <label for="experienceDescription">Job Description</label>
 
         <textarea
             id="experienceDescription"
@@ -244,8 +307,8 @@
 
     </div>
 
-      </div>
-      <!-- ================= SKILLS SECTION ================= -->
+</div>
+<!-- ================= SKILLS SECTION ================= -->
 
 <div class="form-section">
 
@@ -253,17 +316,16 @@
 
     <div class="input-group">
 
-        <label>Skills</label>
+        <label for="skills">Skills</label>
 
-        <input
-            type="text"
+        <textarea
             id="skills"
-            placeholder="HTML, CSS, JavaScript, React">
+            rows="4"
+            placeholder="HTML, CSS, JavaScript, React, Python"></textarea>
 
     </div>
 
 </div>
-
 
 <!-- ================= LANGUAGES SECTION ================= -->
 
@@ -273,7 +335,7 @@
 
     <div class="input-group">
 
-        <label>Languages</label>
+        <label for="languages">Languages</label>
 
         <input
             type="text"
@@ -284,7 +346,6 @@
 
 </div>
 
-
 <!-- ================= CERTIFICATIONS SECTION ================= -->
 
 <div class="form-section">
@@ -293,7 +354,7 @@
 
     <div class="input-group">
 
-        <label>Certification Name</label>
+        <label for="certification">Certification</label>
 
         <input
             type="text"
@@ -304,112 +365,204 @@
 
 </div>
 
-
-<!-- ================= DOWNLOAD BUTTON ================= -->
+<!-- ================= PROJECTS SECTION ================= -->
 
 <div class="form-section">
 
-    <button class="download-btn" id="downloadResume">
+    <h3>Projects</h3>
+
+    <div class="input-group">
+
+        <label for="projects">Projects</label>
+
+        <textarea
+            id="projects"
+            rows="4"
+            placeholder="Describe your best projects..."></textarea>
+
+    </div>
+
+</div>
+
+<!-- ================= INTERESTS SECTION ================= -->
+
+<div class="form-section">
+
+    <h3>Interests</h3>
+
+    <div class="input-group">
+
+        <label for="interests">Interests</label>
+
+        <input
+            type="text"
+            id="interests"
+            placeholder="Reading, Coding, Cricket">
+
+    </div>
+
+</div>
+
+<!-- ================= ACTION BUTTONS ================= -->
+
+<div class="form-section">
+
+    <button type="button" class="download-btn" id="downloadResume">
 
         <i class="fa-solid fa-file-pdf"></i>
 
-        Download Resume PDF
+        Download PDF
+
+    </button>
+
+    <button type="button" class="download-btn" id="clearForm" style="margin-top:15px; background:#ef4444;">
+
+        <i class="fa-solid fa-trash"></i>
+
+        Clear Form
 
     </button>
 
 </div>
-<!-- ================= RESUME PREVIEW ================= -->
+<!-- ================= RIGHT SIDE START ================= -->
 
-<div class="resume-paper">
+<div class="resume-preview">
 
-    <div class="resume-header">
+    <div class="resume-paper">
 
-        <h1 id="previewName">Your Name</h1>
+        <!-- Resume Header -->
 
-        <h3 id="previewJobTitle">Professional Title</h3>
+        <div class="resume-header">
 
-        <p>
-            <span id="previewEmail">example@email.com</span> |
-            <span id="previewPhone">+92 300 1234567</span>
-        </p>
+            <h1 id="previewName">Your Name</h1>
 
-        <p>
-            <span id="previewAddress">City, Country</span> |
-            <span id="previewWebsite">linkedin.com/in/yourname</span>
-        </p>
+            <h3 id="previewJobTitle">Professional Title</h3>
 
-    </div>
+            <p>
 
-    <!-- Summary -->
+                <span id="previewEmail">example@email.com</span> |
 
-    <div class="resume-section">
+                <span id="previewPhone">+92 300 1234567</span>
 
-        <h2>Professional Summary</h2>
+            </p>
 
-        <p id="previewSummary">
-            Your professional summary will appear here.
-        </p>
+            <p>
 
-    </div>
+                <span id="previewAddress">City, Country</span> |
 
-    <!-- Education -->
+                <span id="previewWebsite">linkedin.com</span>
 
-    <div class="resume-section">
+            </p>
 
-        <h2>Education</h2>
+        </div>
 
-        <p id="previewEducation">
-            Degree | University | Year
-        </p>
+        <!-- Summary -->
 
-    </div>
+        <div class="resume-section">
 
-    <!-- Experience -->
+            <h2>Professional Summary</h2>
 
-    <div class="resume-section">
+            <p id="previewSummary">
+                Your professional summary will appear here.
+            </p>
 
-        <h2>Work Experience</h2>
+        </div>
 
-        <p id="previewExperience">
-            Your work experience will appear here.
-        </p>
+        <!-- Education -->
 
-    </div>
+        <div class="resume-section">
 
-    <!-- Skills -->
+            <h2>Education</h2>
 
-    <div class="resume-section">
+            <p id="previewEducation">
+                Degree • University • Year
+            </p>
 
-        <h2>Skills</h2>
+        </div>
 
-        <p id="previewSkills">
-            HTML, CSS, JavaScript
-        </p>
+        <!-- Experience -->
 
-    </div>
+        <div class="resume-section">
 
-    <!-- Languages -->
+            <h2>Work Experience</h2>
 
-    <div class="resume-section">
+            <p id="previewExperience">
+                Your work experience will appear here.
+            </p>
 
-        <h2>Languages</h2>
+        </div>
 
-        <p id="previewLanguages">
-            English, Urdu
-        </p>
+        <!-- Skills -->
 
-    </div>
+        <div class="resume-section">
 
-    <!-- Certifications -->
+            <h2>Skills</h2>
 
-    <div class="resume-section">
+            <p id="previewSkills">
+                HTML • CSS • JavaScript
+            </p>
 
-        <h2>Certifications</h2>
+        </div>
 
-        <p id="previewCertification">
-            Google UX Design Certificate
-        </p>
+        <!-- Languages -->
+
+        <div class="resume-section">
+
+            <h2>Languages</h2>
+
+            <p id="previewLanguages">
+                English • Urdu
+            </p>
+
+        </div>
+
+        <!-- Certifications -->
+
+        <div class="resume-section">
+
+            <h2>Certifications</h2>
+
+            <p id="previewCertification">
+                Your certification will appear here.
+            </p>
+
+        </div>
+
+        <!-- Projects -->
+
+        <div class="resume-section">
+
+            <h2>Projects</h2>
+
+            <p id="previewProjects">
+                Your projects will appear here.
+            </p>
+
+        </div>
+
+        <!-- Interests -->
+
+        <div class="resume-section">
+
+            <h2>Interests</h2>
+
+            <p id="previewInterests">
+                Reading • Coding • Sports
+            </p>
+
+        </div>
 
     </div>
 
 </div>
+
+<!-- ================= RIGHT SIDE END ================= -->
+
+</div>
+</section>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

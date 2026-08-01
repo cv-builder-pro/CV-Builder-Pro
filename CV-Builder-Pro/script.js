@@ -1,328 +1,415 @@
-/*=====================================
-        CV BUILDER PRO
-        SCRIPT.JS - PART 1
-=====================================*/
+/*=====================================================
+    CV BUILDER PRO
+    SCRIPT.JS
+    Version 1.0
+=====================================================*/
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
-    // ===== FORM INPUTS =====
+    // ===========================
+    // INPUT ELEMENTS
+    // ===========================
 
-    const fullName = document.getElementById("fullName");
-    const jobTitle = document.getElementById("jobTitle");
-    const email = document.getElementById("email");
-    const phone = document.getElementById("phone");
-    const address = document.getElementById("address");
-    const website = document.getElementById("website");
-    const summary = document.getElementById("summary");
+    const inputs = {
 
-    // ===== PREVIEW =====
+        fullName: document.getElementById("fullName"),
+        jobTitle: document.getElementById("jobTitle"),
+        email: document.getElementById("email"),
+        phone: document.getElementById("phone"),
+        address: document.getElementById("address"),
+        website: document.getElementById("website"),
+        summary: document.getElementById("summary"),
 
-    const previewName = document.getElementById("previewName");
-    const previewJobTitle = document.getElementById("previewJobTitle");
-    const previewEmail = document.getElementById("previewEmail");
-    const previewPhone = document.getElementById("previewPhone");
-    const previewAddress = document.getElementById("previewAddress");
-    const previewWebsite = document.getElementById("previewWebsite");
-    const previewSummary = document.getElementById("previewSummary");
+        degree: document.getElementById("degree"),
+        institute: document.getElementById("institute"),
+        eduStart: document.getElementById("eduStart"),
+        eduEnd: document.getElementById("eduEnd"),
+        grade: document.getElementById("grade"),
+        educationDescription: document.getElementById("educationDescription"),
 
+        experienceJobTitle: document.getElementById("experienceJobTitle"),
+        companyName: document.getElementById("companyName"),
+        companyLocation: document.getElementById("companyLocation"),
+        experienceStart: document.getElementById("experienceStart"),
+        experienceEnd: document.getElementById("experienceEnd"),
+        experienceDescription: document.getElementById("experienceDescription"),
 
-    function updatePreview() {
+        skills: document.getElementById("skills"),
+        languages: document.getElementById("languages"),
+        certification: document.getElementById("certification"),
+        projects: document.getElementById("projects"),
+        interests: document.getElementById("interests")
+    };
 
-        if (previewName)
-            previewName.textContent =
-                fullName.value || "Your Name";
+    // ===========================
+    // PREVIEW ELEMENTS
+    // ===========================
 
-        if (previewJobTitle)
-            previewJobTitle.textContent =
-                jobTitle.value || "Professional Title";
+    const preview = {
 
-        if (previewEmail)
-            previewEmail.textContent =
-                email.value || "example@email.com";
+        name: document.getElementById("previewName"),
+        jobTitle: document.getElementById("previewJobTitle"),
+        email: document.getElementById("previewEmail"),
+        phone: document.getElementById("previewPhone"),
+        address: document.getElementById("previewAddress"),
+        website: document.getElementById("previewWebsite"),
+        summary: document.getElementById("previewSummary"),
 
-        if (previewPhone)
-            previewPhone.textContent =
-                phone.value || "+92 300 1234567";
+        education: document.getElementById("previewEducation"),
+        experience: document.getElementById("previewExperience"),
+        skills: document.getElementById("previewSkills"),
+        languages: document.getElementById("previewLanguages"),
+        certification: document.getElementById("previewCertification"),
+        projects: document.getElementById("previewProjects"),
+        interests: document.getElementById("previewInterests")
+    };
 
-        if (previewAddress)
-            previewAddress.textContent =
-                address.value || "City, Country";
+    // ===========================
+    // SAFE TEXT FUNCTION
+    // ===========================
 
-        if (previewWebsite)
-            previewWebsite.textContent =
-                website.value || "linkedin.com";
+    function text(value, fallback) {
+        return value && value.trim() !== "" ? value : fallback;
+    }
 
-        if (previewSummary)
-            previewSummary.textContent =
-                summary.value ||
-                "Your professional summary will appear here.";
+    // ===========================
+    // UPDATE RESUME
+    // ===========================
+
+    function updateResume() {
+
+        if (preview.name)
+            preview.name.textContent =
+                text(inputs.fullName.value, "Your Name");
+
+        if (preview.jobTitle)
+            preview.jobTitle.textContent =
+                text(inputs.jobTitle.value, "Professional Title");
+
+        if (preview.email)
+            preview.email.textContent =
+                text(inputs.email.value, "example@email.com");
+
+        if (preview.phone)
+            preview.phone.textContent =
+                text(inputs.phone.value, "+92 300 1234567");
+
+        if (preview.address)
+            preview.address.textContent =
+                text(inputs.address.value, "City, Country");
+
+        if (preview.website)
+            preview.website.textContent =
+                text(inputs.website.value, "linkedin.com");
+
+        if (preview.summary)
+            preview.summary.textContent =
+                text(
+                    inputs.summary.value,
+                    "Your professional summary will appear here."
+                );
+
+                // ===========================
+        // EDUCATION
+        // ===========================
+
+        if (preview.education) {
+
+            preview.education.innerHTML = `
+                <strong>${text(inputs.degree.value, "Degree")}</strong><br>
+                ${text(inputs.institute.value, "Institute")}<br>
+                ${text(inputs.eduStart.value, "Start Year")} -
+                ${text(inputs.eduEnd.value, "End Year")}<br>
+                ${text(inputs.grade.value, "")}<br>
+                ${text(inputs.educationDescription.value, "")}
+            `;
+
+        }
+
+        // ===========================
+        // EXPERIENCE
+        // ===========================
+
+        if (preview.experience) {
+
+            preview.experience.innerHTML = `
+                <strong>${text(inputs.experienceJobTitle.value, "Job Title")}</strong><br>
+                ${text(inputs.companyName.value, "Company")}
+                | ${text(inputs.companyLocation.value, "Location")}<br>
+                ${text(inputs.experienceStart.value, "")}
+                -
+                ${text(inputs.experienceEnd.value, "")}<br>
+                ${text(inputs.experienceDescription.value, "")}
+            `;
+
+        }
+
+        // ===========================
+        // SKILLS
+        // ===========================
+
+        if (preview.skills) {
+
+            preview.skills.textContent =
+                text(inputs.skills.value, "HTML, CSS, JavaScript");
+
+        }
+
+        // ===========================
+        // LANGUAGES
+        // ===========================
+
+        if (preview.languages) {
+
+            preview.languages.textContent =
+                text(inputs.languages.value, "English, Urdu");
+
+        }
+
+        // ===========================
+        // CERTIFICATION
+        // ===========================
+
+        if (preview.certification) {
+
+            preview.certification.textContent =
+                text(inputs.certification.value, "No Certification");
+
+        }
+
+        // ===========================
+        // PROJECTS
+        // ===========================
+
+        if (preview.projects) {
+
+            preview.projects.textContent =
+                text(inputs.projects.value, "No Projects Added");
+
+        }
+
+        // ===========================
+        // INTERESTS
+        // ===========================
+
+        if (preview.interests) {
+
+            preview.interests.textContent =
+                text(inputs.interests.value, "Reading, Coding");
+
+        }
 
     }
 
+    // ===========================
+    // LIVE PREVIEW
+    // ===========================
 
-    const inputs = [
-
-        fullName,
-        jobTitle,
-        email,
-        phone,
-        address,
-        website,
-        summary
-
-    ];
-
-    inputs.forEach(input => {
+    Object.values(inputs).forEach(input => {
 
         if (input) {
 
-            input.addEventListener("input", updatePreview);
+            input.addEventListener("input", updateResume);
 
         }
 
     });
 
-    updatePreview();
+    updateResume();
+            // ===========================
+    // LOCAL STORAGE
+    // ===========================
 
-});
+    function saveData() {
 
-/*=====================================
-    SCRIPT.JS - PART 2
-    EDUCATION + EXPERIENCE + SKILLS
-=====================================*/
+        const data = {};
 
-// ===== FORM INPUTS =====
+        Object.keys(inputs).forEach(key => {
 
-const degree = document.getElementById("degree");
-const institute = document.getElementById("institute");
-const eduStart = document.getElementById("eduStart");
-const eduEnd = document.getElementById("eduEnd");
-const grade = document.getElementById("grade");
-const educationDescription = document.getElementById("educationDescription");
+            if (inputs[key]) {
 
-const experienceJobTitle = document.getElementById("experienceJobTitle");
-const companyName = document.getElementById("companyName");
-const companyLocation = document.getElementById("companyLocation");
-const experienceStart = document.getElementById("experienceStart");
-const experienceEnd = document.getElementById("experienceEnd");
-const experienceDescription = document.getElementById("experienceDescription");
+                data[key] = inputs[key].value;
 
-const skills = document.getElementById("skills");
-const languages = document.getElementById("languages");
-const certification = document.getElementById("certification");
-const projects = document.getElementById("projects");
-const interests = document.getElementById("interests");
-
-
-// ===== PREVIEW =====
-
-const previewEducation = document.getElementById("previewEducation");
-const previewExperience = document.getElementById("previewExperience");
-const previewSkills = document.getElementById("previewSkills");
-const previewLanguages = document.getElementById("previewLanguages");
-const previewCertification = document.getElementById("previewCertification");
-const previewProjects = document.getElementById("previewProjects");
-const previewInterests = document.getElementById("previewInterests");
-
-
-// ===== UPDATE FUNCTION =====
-
-function updateResumeSections(){
-
-    if(previewEducation){
-
-        previewEducation.innerHTML = `
-            <strong>${degree?.value || "Degree"}</strong><br>
-            ${institute?.value || "Institute"}<br>
-            ${eduStart?.value || "Start"} - ${eduEnd?.value || "End"}<br>
-            ${grade?.value || ""}<br>
-            ${educationDescription?.value || ""}
-        `;
-
-    }
-
-    if(previewExperience){
-
-        previewExperience.innerHTML = `
-            <strong>${experienceJobTitle?.value || "Job Title"}</strong><br>
-            ${companyName?.value || "Company"} | ${companyLocation?.value || "Location"}<br>
-            ${experienceStart?.value || ""} - ${experienceEnd?.value || ""}<br>
-            ${experienceDescription?.value || ""}
-        `;
-
-    }
-
-    if(previewSkills){
-
-        previewSkills.textContent =
-            skills?.value || "HTML, CSS, JavaScript";
-
-    }
-
-    if(previewLanguages){
-
-        previewLanguages.textContent =
-            languages?.value || "English, Urdu";
-
-    }
-
-    if(previewCertification){
-
-        previewCertification.textContent =
-            certification?.value || "No Certification";
-
-    }
-
-    if(previewProjects){
-
-        previewProjects.textContent =
-            projects?.value || "No Projects";
-
-    }
-
-    if(previewInterests){
-
-        previewInterests.textContent =
-            interests?.value || "Reading, Coding";
-
-    }
-
-}
-
-
-// ===== EVENTS =====
-
-[
-degree,
-institute,
-eduStart,
-eduEnd,
-grade,
-educationDescription,
-experienceJobTitle,
-companyName,
-companyLocation,
-experienceStart,
-experienceEnd,
-experienceDescription,
-skills,
-languages,
-certification,
-projects,
-interests
-
-].forEach(input=>{
-
-    if(input){
-
-        input.addEventListener("input",updateResumeSections);
-
-    }
-
-});
-
-
-updateResumeSections();
-/*=====================================
-    SCRIPT.JS - PART 3
-    LOCAL STORAGE + CLEAR FORM
-=====================================*/
-
-const formInputs = document.querySelectorAll("input, textarea");
-
-// ===== SAVE DATA =====
-
-function saveResumeData() {
-
-    const resumeData = {};
-
-    formInputs.forEach(input => {
-
-        resumeData[input.id] = input.value;
-
-    });
-
-    localStorage.setItem(
-        "cvBuilderData",
-        JSON.stringify(resumeData)
-    );
-
-}
-
-// ===== LOAD DATA =====
-
-function loadResumeData() {
-
-    const savedData = JSON.parse(
-        localStorage.getItem("cvBuilderData")
-    );
-
-    if (!savedData) return;
-
-    formInputs.forEach(input => {
-
-        if (savedData[input.id] !== undefined) {
-
-            input.value = savedData[input.id];
-
-        }
-
-    });
-
-    if (typeof updatePreview === "function") {
-        updatePreview();
-    }
-
-    if (typeof updateResumeSections === "function") {
-        updateResumeSections();
-    }
-
-}
-
-// ===== AUTO SAVE =====
-
-formInputs.forEach(input => {
-
-    input.addEventListener("input", saveResumeData);
-
-});
-
-// ===== LOAD WHEN PAGE OPENS =====
-
-loadResumeData();
-
-// ===== CLEAR FORM =====
-
-const clearForm = document.getElementById("clearForm");
-
-if (clearForm) {
-
-    clearForm.addEventListener("click", () => {
-
-        if (!confirm("Are you sure you want to clear the resume?")) {
-
-            return;
-
-        }
-
-        formInputs.forEach(input => {
-
-            input.value = "";
+            }
 
         });
 
-        localStorage.removeItem("cvBuilderData");
+        localStorage.setItem(
+            "cvbuilderpro_data",
+            JSON.stringify(data)
+        );
 
-        if (typeof updatePreview === "function") {
-            updatePreview();
+    }
+
+    function loadData() {
+
+        const saved =
+            JSON.parse(
+                localStorage.getItem("cvbuilderpro_data")
+            );
+
+        if (!saved) return;
+
+        Object.keys(saved).forEach(key => {
+
+            if (inputs[key]) {
+
+                inputs[key].value = saved[key];
+
+            }
+
+        });
+
+        updateResume();
+
+    }
+
+    Object.values(inputs).forEach(input => {
+
+        if (input) {
+
+            input.addEventListener("input", saveData);
+
         }
-
-        if (typeof updateResumeSections === "function") {
-            updateResumeSections();
-        }
-
-        alert("Resume cleared successfully!");
 
     });
 
-}
+    loadData();
+
+    // ===========================
+    // CLEAR FORM
+    // ===========================
+
+    const clearBtn =
+        document.getElementById("clearForm");
+
+    if (clearBtn) {
+
+        clearBtn.addEventListener("click", function () {
+
+            if (!confirm("Clear all resume data?")) {
+
+                return;
+
+            }
+
+            Object.values(inputs).forEach(input => {
+
+                if (input) {
+
+                    input.value = "";
+
+                }
+
+            });
+
+            localStorage.removeItem(
+                "cvbuilderpro_data"
+            );
+
+            updateResume();
+
+            alert("Resume cleared successfully.");
+
+        });
+
+    }
+
+    // ===========================
+    // FORM VALIDATION
+    // ===========================
+
+    function validateForm() {
+
+        if (!inputs.fullName.value.trim()) {
+
+            alert("Please enter your full name.");
+
+            inputs.fullName.focus();
+
+            return false;
+
+        }
+
+        if (!inputs.email.value.trim()) {
+
+            alert("Please enter your email.");
+
+            inputs.email.focus();
+
+            return false;
+
+        }
+
+        return true;
+
+    }
+            // ===========================
+    // DOWNLOAD PDF
+    // ===========================
+
+    const downloadBtn =
+        document.getElementById("downloadResume");
+
+    if (downloadBtn) {
+
+        downloadBtn.addEventListener("click", function () {
+
+            if (!validateForm()) {
+
+                return;
+
+            }
+
+            const resume =
+                document.querySelector(".resume-paper");
+
+            if (!resume) {
+
+                alert("Resume Preview Not Found.");
+
+                return;
+
+            }
+
+            const options = {
+
+                margin: 0.3,
+
+                filename:
+                    (inputs.fullName.value || "Resume") + ".pdf",
+
+                image: {
+                    type: "jpeg",
+                    quality: 1
+                },
+
+                html2canvas: {
+                    scale: 2,
+                    useCORS: true
+                },
+
+                jsPDF: {
+                    unit: "in",
+                    format: "a4",
+                    orientation: "portrait"
+                }
+
+            };
+
+            html2pdf()
+                .set(options)
+                .from(resume)
+                .save();
+
+        });
+
+    }
+
+    // ===========================
+    // INITIAL LOAD
+    // ===========================
+
+    updateResume();
+
+}); // DOMContentLoaded END
